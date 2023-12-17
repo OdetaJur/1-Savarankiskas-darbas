@@ -1,0 +1,12 @@
+﻿  My_Lib.cpp
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(47,52): warning C4244: 'return': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(47,52): warning C4244:         with
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(47,52): warning C4244:         [
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(47,52): warning C4244:             _Ty=double
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(47,52): warning C4244:         ]
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(52,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(56,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\My_Lib.cpp(57,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  SavarankiskasDarbas1.cpp
+  Generating Code...
+  SavarankiskasDarbas1.vcxproj -> C:\Users\Odeta\Desktop\Sisteminis programavimas-SD\SavarankiskasDarbas1\x64\Debug\SavarankiskasDarbas1.exe
