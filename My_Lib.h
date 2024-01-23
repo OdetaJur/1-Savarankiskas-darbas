@@ -38,4 +38,3 @@ public:
 	friend std::istream& operator>>(std::istream& in, Student& A);
 };
 
-#endif // ! My_Lib
