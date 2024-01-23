@@ -1,4 +1,4 @@
-﻿#include"My_Lib.h"
+#include"My_Lib.h"
 
 int minimum(int a, int b) {
 	return a < b ? a : b;
@@ -62,14 +62,14 @@ void Student::printas() {
 		cout << Exam << " | ";
 		cout << " Rezultatas = " << Rez << endl;
 };
-std::ostream& operator<<(std::ostream& out, const Student& A) { // perdengimas out
+std::ostream& operator<<(std::ostream& out, const Student& A) { // perdengimas
 	out << A.Name << " ; " << A.Surname << " | ";
 	for (auto& i : A.HW) out << i << " | ";
 	out << A.Exam << " | ";
 	out << " Rezultatas = " << A.Rez << endl;
 	return out;
 }
-std::istream& operator>>(std::istream& in, Student& A) { //perdengimas in
+std::istream& operator>>(std::istream& in, Student& A) { //perdengimas
 	string laikS;
 	vector<int> Vec;
 	int ndNr=5;
