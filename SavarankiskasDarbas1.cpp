@@ -1,4 +1,4 @@
-﻿#include "My_Lib.h"
+#include "My_Lib.h"
 
 int main()
 {
@@ -26,11 +26,11 @@ int main()
 		cin >> ndNr;
 		Laikinas.SetExam(ndNr);
 		Laikinas.Rezult('v');
-		cin >> Laikinas;
+		//cin >> Laikinas;
 		Grupe.push_back(Laikinas);
 		Laikinas.~Student();
 	}
-	for (auto& duom : Grupe) duom.printas();
+	for (auto &duom : Grupe) duom.printas();
 
 	system("pause");
 }
