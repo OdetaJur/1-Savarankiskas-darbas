@@ -81,4 +81,22 @@ std::istream& operator>>(std::istream& in, Student& A) { //perdengimas
 	}
 	in >> ndNr;
 	return in;
+
+	
+}
+
+void Student::SkaitytiFaila(vector<Student>& Grupe, const string& filename) { //failu skaitymas
+	std::ifstream file(filename);
+
+	string val;
+	std::getline(file, val);
+
+	while (getline(file, val) ){
+		std::istringstream iss(val);
+		Student student;
+		iss >> student;
+		Grupe.push_back(student);
+	}
+
+	file.close();
 }
