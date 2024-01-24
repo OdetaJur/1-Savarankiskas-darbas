@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <fstream>
 
 using std::cout;
 using std::cin;
@@ -36,5 +37,6 @@ public:
 	void printas();
 	friend std::ostream& operator<<(std::ostream& out, const Student& A);
 	friend std::istream& operator>>(std::istream& in, Student& A);
+	inline void SkaitytiFaila(vector<Student>& Grupe, const string& filename);
 };
 
