@@ -86,24 +86,24 @@ std::istream& operator>>(std::istream& in, Student& A) { //perdengimas
 // nuskaitymas iš failo
 
 void nuskait(vector<Student>& Grupe, const string& failo_vardas) {
-	string eil, zodz;
+	string eil;
 	Student Laikinas;
 	string laikS;
 	vector<int> Vec;
 	int pazym;
-	vector<string>aaa;
-
+	
 	std::ifstream open_f(failo_vardas); // atidarom faila
 
 	getline(open_f, eil); //nuskaitom eilutes
 
 
-	while (getline(open_f, eil)) { //kol skaitom eilutes 
-	std::istringstream sst(eil); //atrenkam žodžius
-	sst >> Laikinas;
-	cout<<eil;
-	Grupe.push_back(Laikinas); // i grupe perkeliam studentus
+	while (getline(open_f, eil)) { 
+		std::istringstream sst(eil);
+		sst >> Laikinas;
+		cout << eil;
+		Grupe.push_back(Laikinas);
 	}
+
 	open_f.close();}
 
 
