@@ -4,7 +4,15 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
 #include <fstream>
+#include <sstream> 
+#include <vector> 
+#include <chrono>
 
 using std::cout;
 using std::cin;
@@ -19,6 +27,7 @@ class Student {
 	vector <int> HW;
 	int Exam;
 	float Rez;
+
 public:
 
 	Student();
@@ -28,15 +37,23 @@ public:
 	~Student(); //destruktorius
 	float Vid();
 	float Med();
-	void Rezult(char pasi);  // apskai?iuoja vidurk? arba median? 
+	void Rezult(char pasi);  // apskaiciuoja vidurki arba mediana 
 	//setters
 	inline void SetName(string N) { Name = N; }
 	inline void SetSurname(string S) { Surname = S; }
 	inline void SetHW(vector <int> Vec) { HW=Vec; }
 	inline void SetExam(int n) { Exam = n; }
+	//getters
+	float getRez() const { return Rez; }
 	void printas();
+
+
 	friend std::ostream& operator<<(std::ostream& out, const Student& A);
 	friend std::istream& operator>>(std::istream& in, Student& A);
-	inline void SkaitytiFaila(vector<Student>& Grupe, const string& filename);
+
+
 };
 
+void nuskait(vector<Student>& Group, const string& filename);
+
+//	void rašym_eil_po_eil(string write_vardas);
