@@ -3,6 +3,8 @@
 int main()
 {
 	vector<Student> Grupe;
+	vector<Student> Vargsiukai;
+	vector<Student> Kietiakai;
 	string failo_vardas;
 
 	//for (int i = 0; i < 3; i++) {
@@ -20,7 +22,7 @@ int main()
 	//	for (int i = 0; i < ndNr; i++) {
 	//		int pazym;
 	//		cout << "Iveskite " << i + 1 << " pazymi: ";
-	//		cin >> pazym; Vec.push_back(pazym); // perkeliam į vec
+	//		cin >> pazym; ; // perkeliam į vec
 	//	}
 	//	Laikinas.SetHW(Vec); Vec.clear(); // perkeliam į laikiną ; išvalom Vec
 	//	cout << "Koks egzamino pazymys? ";
@@ -35,12 +37,17 @@ int main()
 
 
 	////////////////////////////////////////////////////////
+
 	///failo nuskaitymas
-	cout << "Įveskite pilną failo vardą" << endl;
+	cout << "Iveskite pilna failo varda" << endl;
 	cin >> failo_vardas;
 	nuskait(Grupe, failo_vardas);
-	for (auto& duom : Grupe) duom.printas()
-		
+
+	//for (auto& duom : Grupe) duom.printas();
+
+	//rusiavimas(Grupe, Vargsiukai, Kietiakai);
+	//rasyt_i_faila(Vargsiukai, Kietiakai);
+
 	system("pause");
 }
 
