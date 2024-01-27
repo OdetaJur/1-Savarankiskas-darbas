@@ -54,6 +54,8 @@ public:
 
 };
 
-void nuskait(vector<Student>& Group, const string& filename);
+void nuskait(vector<Student>& Grupe, const string& failo_vardas);
+void rusiavimas(vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai);
+void rasyt_i_faila(vector<Student>Vargsiukai, vector<Student> Kietiakai);
 
-//	void rašym_eil_po_eil(string write_vardas);
+
