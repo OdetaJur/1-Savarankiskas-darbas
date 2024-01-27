@@ -81,22 +81,34 @@ std::istream& operator>>(std::istream& in, Student& A) { //perdengimas
 	}
 	in >> ndNr;
 	return in;
-
-	
 }
 
-void Student::SkaitytiFaila(vector<Student>& Grupe, const string& filename) { //failu skaitymas
-	std::ifstream file(filename);
+// nuskaitymas iš failo
 
-	string val;
-	std::getline(file, val);
+void nuskait(vector<Student>& Group, const string& failo_vardas) {
+	string eil;
 
-	while (getline(file, val) ){
-		std::istringstream iss(val);
-		Student student;
-		iss >> student;
-		Grupe.push_back(student);
+	std::ifstream open_f(failo_vardas); // atidarom faila
+	getline(open_f, eil); //nuskaitom eilutes
+
+	while (getline(open_f, eil)) { //kol skaitom eilutes 
+		std::istringstream sst(eil); //atrenkam žodžius
+		Student studentai;
+		sst >> studentai; //žodžius idedam i studentus
+		Group.push_back(studentai); // i grupe perkeliam studentus
 	}
-
-	file.close();
+	open_f.close();
 }
+
+
+
+
+//// rašymas į failą
+//void rašym_eil_po_eil(std::string write_vardas) {
+//	std::vector<std::string> splited;
+//	std::ofstream out_f(write_vardas);
+//	for (std::string a : splited) out_f << a << "\n";
+//	out_f.close();
+//}
+
+
