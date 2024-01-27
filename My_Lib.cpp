@@ -82,33 +82,69 @@ std::istream& operator>>(std::istream& in, Student& A) { //perdengimas
 	in >> ndNr;
 	return in;
 }
-
+//////////////////////////////////////////////////
 // nuskaitymas iš failo
 
-void nuskait(vector<Student>& Group, const string& failo_vardas) {
-	string eil;
+void nuskait(vector<Student>& Grupe, const string& failo_vardas) {
+	string eil, zodz;
+	Student Laikinas;
+	string laikS;
+	vector<int> Vec;
+	int pazym;
+	vector<string>aaa;
 
 	std::ifstream open_f(failo_vardas); // atidarom faila
+
 	getline(open_f, eil); //nuskaitom eilutes
 
+
 	while (getline(open_f, eil)) { //kol skaitom eilutes 
-		std::istringstream sst(eil); //atrenkam žodžius
-		Student studentai;
-		sst >> studentai; //žodžius idedam i studentus
-		Group.push_back(studentai); // i grupe perkeliam studentus
+	std::istringstream sst(eil); //atrenkam žodžius
+	sst >> Laikinas;
+	cout<<eil;
+	Grupe.push_back(Laikinas); // i grupe perkeliam studentus
 	}
-	open_f.close();
+	open_f.close();}
+
+
+
+
+
+/////////////////////////////////
+/////////skirstymas
+
+void rusiavimas(vector<Student>& studentai, vector<Student>& vargsiukai, vector<Student>& kietiakiai) {
+	auto skirst = std::stable_partition(studentai.begin(), studentai.end(), [](const Student& s) { return s.getRez() < 5.0; });
+
+	vargsiukai.assign(studentai.begin(), skirst);
+	kietiakiai.assign(skirst, studentai.end());
+}
+
+
+////////////////////////////////
+//////rašymas i faila 
+
+void rasyt_i_faila (vector<Student>Vargsiukai, vector<Student> Kietiakai ){
+	std::ofstream vargs_failas("Vargsiukai.txt");
+	std::ofstream kietek_failas("Kietiakai.txt");
+
+
+for (const auto& studentai : Vargsiukai) {
+	vargs_failas << studentai;
+}
+for (const auto& studentai : Kietiakai) {
+	kietek_failas << studentai;
+}
+vargs_failas.close();
+kietek_failas.close();
+
 }
 
 
 
 
-//// rašymas į failą
-//void rašym_eil_po_eil(std::string write_vardas) {
-//	std::vector<std::string> splited;
-//	std::ofstream out_f(write_vardas);
-//	for (std::string a : splited) out_f << a << "\n";
-//	out_f.close();
-//}
+
+
+
 
 
