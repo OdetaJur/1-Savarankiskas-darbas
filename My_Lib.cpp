@@ -92,15 +92,49 @@ void nuskait(vector<Student>& Grupe, const string& failo_vardas) {
 	vector<int> Vec;
 	int pazym;
 	
-	std::ifstream open_f(failo_vardas); // atidarom faila
+	std::ifstream open_f(failo_vardas); 
+	getline(open_f, eil); 
 
-	getline(open_f, eil); //nuskaitom eilutes
 
+	while (getline(open_f, eil)) {
 
-	while (getline(open_f, eil)) { 
 		std::istringstream sst(eil);
-		sst >> Laikinas;
-		cout << eil;
+
+
+		string q = "";
+		
+
+		for (int i = 0; i < eil.length(); i++) {
+			laikS = q;
+			q = "";
+			sst >> q;
+
+			if (q.compare("")==0) {
+				pazym = stoi(laikS);
+				Laikinas.SetExam(pazym);
+				break;
+			}
+			if (i > 1) {
+				Vec.push_back(stoi(q));
+			}
+			else if (i==0)
+			{
+				Laikinas.SetName(q);
+			}
+			else if (i == 1)
+			{
+				Laikinas.SetSurname(q);
+			}
+			
+		}
+		Laikinas.SetHW(Vec);
+
+		cout << endl;
+		Vec.clear();
+
+		Laikinas.Rezult('v');
+
+		//cout << Laikinas;
 		Grupe.push_back(Laikinas);
 	}
 
