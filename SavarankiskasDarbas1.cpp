@@ -22,7 +22,7 @@ int main()
 	//	for (int i = 0; i < ndNr; i++) {
 	//		int pazym;
 	//		cout << "Iveskite " << i + 1 << " pazymi: ";
-	//		cin >> pazym; ; // perkeliam į vec
+	//		cin >> pazym; Vec.push_back(pazym) ; // perkeliam į vec
 	//	}
 	//	Laikinas.SetHW(Vec); Vec.clear(); // perkeliam į laikiną ; išvalom Vec
 	//	cout << "Koks egzamino pazymys? ";
@@ -41,12 +41,14 @@ int main()
 	///failo nuskaitymas
 	cout << "Iveskite pilna failo varda" << endl;
 	cin >> failo_vardas;
+	//failo_vardas = "studentai10.txt";
 	nuskait(Grupe, failo_vardas);
+	
+	for (auto& duom : Grupe) duom.printas();
 
-	//for (auto& duom : Grupe) duom.printas();
-
-	//rusiavimas(Grupe, Vargsiukai, Kietiakai);
-	//rasyt_i_faila(Vargsiukai, Kietiakai);
+	rusiavimas(Grupe, Vargsiukai, Kietiakai);
+	rasyt_i_faila(Vargsiukai, Kietiakai);
+	
 
 	system("pause");
 }
